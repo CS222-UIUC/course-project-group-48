@@ -2,11 +2,7 @@ name: Python
 
 on:
   push:
-    branches: [ $default-branch ]
-    paths: '**.py'
   pull_request:
-    branches: [ $default-branch ]
-    paths: '**.py'
 
 permissions:
   contents: read
