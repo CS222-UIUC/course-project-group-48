@@ -40,5 +40,7 @@ func main() {
 	e.POST(fmt.Sprintf("%s/authuser", version1_str), handlers.Auth_user)
 	e.POST(fmt.Sprintf("%s/deleteuser", version1_str), handlers.Delete_user)
 
+	e.POST(fmt.Sprintf("%s/updateuser", version1_str), handlers.Update_user)
+
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
