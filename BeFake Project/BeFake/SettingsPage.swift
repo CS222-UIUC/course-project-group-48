@@ -45,13 +45,59 @@ struct CurrentUserNamePage: View {
     }
 }
 
+struct CurrentPasswordPage: View {
+    var body: some View {
+        return Text("Password: password01")
+            .fontWeight(.semibold)
+            .cornerRadius(5.0)
+            .padding(.bottom, 10)
+    }
+}
+
+struct CurrentNamePage: View {
+    var body: some View {
+        return Text("Name: Anagha")
+            .fontWeight(.semibold)
+            .cornerRadius(5.0)
+            .padding(.bottom, 10)
+    }
+}
+
+struct ChangePFPPage: View {
+    var body: some View {
+        return Text("Change Profile Image")
+            .fontWeight(.semibold)
+            .cornerRadius(5.0)
+            .padding(.bottom, 10)
+    }
+}
+
 struct SettingsPage_Previews: PreviewProvider {
     static var previews: some View {
         UpdatePassUserView()
     }
 }
 
+struct UploadPhoto : View {
 
+    @State var username: String = ""
+    @State var password: String = ""
+
+    var body: some View {
+
+        VStack {
+        //[…]
+            Text("Upload New Image")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 220, height: 60)
+                .background(Color.green)
+                .cornerRadius(15.0)
+        }
+            .padding()
+    }
+}
 
 struct UpdatePassUserView: View {
     @State var username: String = ""
@@ -59,15 +105,26 @@ struct UpdatePassUserView: View {
     var body: some View {
         VStack {
             SettingsPage()
+            CurrentNamePage()
+            TextField("Change Name", text: $username)
+                .padding()
+                .cornerRadius(5.0)
+                .padding(.bottom, 20)
             CurrentUserNamePage()
             TextField("Change Username", text: $username)
                 .padding()
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
+            CurrentPasswordPage()
             SecureField("Change Password", text: $password)
                 .padding()
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
+            ChangePFPPage()
+            Image(systemName: "photo")
+                .frame(width:50, height: 50)
+                .foregroundColor(.accentColor)
+            UploadPhoto()
         }
         .padding()
     }
