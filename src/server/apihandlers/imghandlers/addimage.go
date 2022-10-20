@@ -1,4 +1,4 @@
-package apihandlers
+package imghandlers
 
 import (
 	"database/sql"
@@ -19,15 +19,9 @@ func Add_image(c echo.Context) error {
 
 	username := json_map["username"].(string)
 	photo := json_map["photo"].(string)
-	db.Exec("INSERT INTO profilepictures VALUES(?);", photo)
+	db.Exec("INSERT INTO profilepictures VALUES(?, ?);", username, photo)
 	if err != nil {
 	}
 
-	mainuser := ""
-	mainphoto := ""
-	row := db.QueryRow("SELECT username, photo FROM profilepictures WHERE username=?", username)
-	row.Scan(&mainphoto)
-	row.Scan(&mainuser)
-
-	return c.String(http.StatusOK, mainuser + mainphoto+"\n")
+	return c.String(http.StatusOK, username+" added photo \n")
 }
