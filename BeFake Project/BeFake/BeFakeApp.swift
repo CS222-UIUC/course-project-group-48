@@ -12,6 +12,7 @@ struct BeFakeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            SettingsPage()
         }
     }
 }

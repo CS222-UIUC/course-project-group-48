@@ -11,6 +11,7 @@
 		A9DDE58D28EFD51E00091750 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DDE58C28EFD51E00091750 /* ContentView.swift */; };
 		A9DDE58F28EFD52100091750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9DDE58E28EFD52100091750 /* Assets.xcassets */; };
 		A9DDE59328EFD52100091750 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9DDE59228EFD52100091750 /* Preview Assets.xcassets */; };
+		B9FA075A28F913C300B844A5 /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FA075928F913C300B844A5 /* SettingsPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A9DDE58E28EFD52100091750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9DDE59028EFD52100091750 /* BeFake.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeFake.entitlements; sourceTree = "<group>"; };
 		A9DDE59228EFD52100091750 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B9FA075928F913C300B844A5 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A9DDE58A28EFD51E00091750 /* BeFakeApp.swift */,
+				B9FA075928F913C300B844A5 /* SettingsPage.swift */,
 				A9DDE58C28EFD51E00091750 /* ContentView.swift */,
 				A9DDE58E28EFD52100091750 /* Assets.xcassets */,
 				A9DDE59028EFD52100091750 /* BeFake.entitlements */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FA075A28F913C300B844A5 /* SettingsPage.swift in Sources */,
 				A9DDE58D28EFD51E00091750 /* ContentView.swift in Sources */,
 				A9DDE58B28EFD51E00091750 /* BeFakeApp.swift in Sources */,
 			);
