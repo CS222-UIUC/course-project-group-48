@@ -37,6 +37,7 @@ func main() {
 	e.POST(fmt.Sprintf("%s/deleteuser", version1_str), handlers.Delete_user)
 
 	e.POST(fmt.Sprintf("%s/updateuser", version1_str), handlers.Update_user)
+	e.POST(fmt.Sprintf("%s/addimage", version1_str), handlers.Add_image)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
