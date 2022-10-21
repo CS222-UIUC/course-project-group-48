@@ -1,11 +1,14 @@
 package main
 
 import (
-	"database/sql"
 	"fmt"
-	"log"
+	"os"
 
-	handlers "server/apihandlers"
+	userhandlers "server/apihandlers/userhandlers"
+
+	imghandlers "server/apihandlers/imghandlers"
+
+	config "server/config"
 
 	"github.com/labstack/echo/v4"
 
@@ -21,23 +24,23 @@ curl -X POST -d \
 var users map[string]string
 
 func main() {
-	e := echo.New()
-
-	db, err := sql.Open("sqlite3", "./database/users.db")
-	if err != nil {
-		log.Fatal(err)
+	if len(os.Args) == 2 {
+		if os.Args[1] == "--configure" || os.Args[1] == "-c" {
+			config.Config()
+		}
 	}
-	defer db.Close()
-	stmt := `CREATE TABLE userinfo(username TEXT, password TEXT);`
-	_, err = db.Exec(stmt)
 
-	// m := make(map[string]string)
-	// mptr := &m
+	e := echo.New()
 
 	// V1
 	version1_str := "/v1"
-	e.POST(fmt.Sprintf("%s/adduser", version1_str), handlers.Add_user)
-	e.POST(fmt.Sprintf("%s/authuser", version1_str), handlers.Auth_user)
+	e.POST(fmt.Sprintf("%s/adduser", version1_str), userhandlers.Add_user)
+	e.POST(fmt.Sprintf("%s/authuser", version1_str), userhandlers.Auth_user)
+	e.POST(fmt.Sprintf("%s/deleteuser", version1_str), userhandlers.Delete_user)
+	e.POST(fmt.Sprintf("%s/updateuser", version1_str), userhandlers.Update_user)
+
+	e.POST(fmt.Sprintf("%s/addimage", version1_str), imghandlers.Add_image)
+	e.GET(fmt.Sprintf("%s/retrieveimage", version1_str), imghandlers.Retrieve_image)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
