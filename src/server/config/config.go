@@ -18,7 +18,7 @@ func Config() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer db.Close()
+	defer dbim.Close()
 	stmt = `CREATE TABLE profilepictures(username TEXT, photo BLOB NOT NULL);`
 	_, err = dbim.Exec(stmt)
 }
