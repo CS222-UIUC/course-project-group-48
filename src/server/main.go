@@ -41,6 +41,7 @@ func main() {
 
 	e.POST(fmt.Sprintf("%s/addimage", version1_str), imghandlers.Add_image)
 	e.POST(fmt.Sprintf("%s/changeimage", version1_str), imghandlers.Change_image)
+	e.POST(fmt.Sprintf("%s/removeimage", version1_str), imghandlers.Remove_image)
 	e.GET(fmt.Sprintf("%s/retrieveimage", version1_str), imghandlers.Retrieve_image)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
