@@ -8,7 +8,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func Change_image(c echo.Context) error {
+func Remove_image(c echo.Context) error {
 	db, err := sql.Open("sqlite3", "./database/images.db")
 
 	json_map := make(map[string]interface{})
@@ -18,14 +18,8 @@ func Change_image(c echo.Context) error {
 	}
 
 	username := json_map["username"].(string)
-	newphoto := json_map["new_photo"].(string)
 
-	mainname := ""
-	mainphoto := ""
-	row := db.QueryRow("SELECT username, photo FROM profilepictures WHERE username=?", username)
-	row.Scan(&mainname, &mainphoto)
+	_, err = db.Exec("DELETE FROM profilepictures WHERE username=?", username)
 
-	mainphoto = newphoto
-
-	return c.String(http.StatusOK, username+" changed photo \n")
+	return c.String(http.StatusOK, "deleted profile picture")
 }
