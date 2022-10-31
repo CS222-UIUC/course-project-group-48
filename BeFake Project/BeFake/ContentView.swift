@@ -46,6 +46,27 @@ struct SubmitButton : View {
     }
 }
 
+struct CreateUser : View {
+    
+    @State var username: String = ""
+    @State var password: String = ""
+    
+    var body: some View {
+        
+        VStack {
+        //[…]
+            Text("Create User")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 220, height: 60)
+                .background(Color.green)
+                .cornerRadius(15.0)
+        }
+            .padding()
+    }
+}
+
 struct ContentView: View {
     @State var username: String = ""
     @State var password: String = ""
@@ -73,6 +94,8 @@ struct ContentView: View {
                 .padding(.bottom, 20)
             SubmitButton()
             
+            CreateUser()
+            
         }
         .padding()
     }
@@ -81,5 +104,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct Previews_ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

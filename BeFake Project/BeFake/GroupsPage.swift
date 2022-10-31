@@ -62,6 +62,23 @@ struct ExitGroup : View {
     }
 }
 
+struct ReportMember : View {
+    var body: some View {
+
+        VStack {
+        //[…]
+            Text("Report Member")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 150, height: 20)
+                .background(Color.green)
+                .cornerRadius(15.0)
+        }
+            .padding()
+    }
+}
+
 
 struct GroupsPage: View {
     @State var username: String = ""
@@ -79,10 +96,13 @@ struct GroupsPage: View {
             Group3()
             ExitGroup()
             
+            ReportMember()
         }
         .padding()
     }
 }
+
+
 
 struct GroupsView_Previews: PreviewProvider {
     static var previews: some View {
