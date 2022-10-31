@@ -78,6 +78,28 @@ struct SettingsPage_Previews: PreviewProvider {
     }
 }
 
+
+struct ChangeUsername : View {
+
+    @State var username: String = ""
+    @State var password: String = ""
+
+    var body: some View {
+
+        VStack {
+        //[…]
+            Text("Change Username")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 220, height: 60)
+                .background(Color.green)
+                .cornerRadius(15.0)
+        }
+            .padding()
+    }
+}
+
 struct UploadPhoto : View {
 
     @State var username: String = ""
@@ -88,6 +110,27 @@ struct UploadPhoto : View {
         VStack {
         //[…]
             Text("Upload New Image")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 220, height: 60)
+                .background(Color.green)
+                .cornerRadius(15.0)
+        }
+            .padding()
+    }
+}
+
+struct ChangePassword : View {
+
+    @State var username: String = ""
+    @State var password: String = ""
+
+    var body: some View {
+
+        VStack {
+        //[…]
+            Text("Change Password")
                 .font(.headline)
                 .foregroundColor(.white)
                 .padding()
@@ -111,6 +154,7 @@ struct UpdatePassUserView: View {
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
             CurrentUserNamePage()
+            ChangeUsername()
             TextField("Change Username", text: $username)
                 .padding()
                 .cornerRadius(5.0)
@@ -120,6 +164,7 @@ struct UpdatePassUserView: View {
                 .padding()
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
+            ChangePassword()
             ChangePFPPage()
             Image(systemName: "photo")
                 .frame(width:50, height: 50)

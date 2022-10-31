@@ -16,6 +16,7 @@ struct BeFakeApp: App {
             ContentView()
             SettingsPage()
             GroupsPage()
+            ProfileView()
         }
     }
 }
