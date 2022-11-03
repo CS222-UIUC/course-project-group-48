@@ -25,6 +25,10 @@ struct Login : View {
     }
 }
 
+func onClick() {
+    print("Hello")
+}
+
 struct SubmitButton : View {
     
     @State var username: String = ""
@@ -34,13 +38,7 @@ struct SubmitButton : View {
         
         VStack {
         //[…]
-            Text("SUBMIT")
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 220, height: 60)
-                .background(Color.green)
-                .cornerRadius(15.0)
+            Button(action: { onClick() }){ Text( "Submit").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
         }
             .padding()
     }
