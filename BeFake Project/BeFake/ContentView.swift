@@ -4,7 +4,6 @@
 //
 //  Created by Madhav Parthasarathy on 10/6/22.
 //
-
 import SwiftUI
 
 struct WelcomeText : View {
@@ -25,6 +24,10 @@ struct Login : View {
     }
 }
 
+func onClick() {
+    print("Hello")
+}
+
 struct SubmitButton : View {
     
     @State var username: String = ""
@@ -34,10 +37,7 @@ struct SubmitButton : View {
         
         VStack {
         //[…]
-            Button(action: {
-                            print("MyNewPrimitiveButton triggered. Is it printed ?")
-                        }){ Text("My NEW primitive Button").padding() }
-                            .buttonStyle(MyNewPrimitiveButtonStyle(color: .yellow))
+            Button(action: { onClick() }){ Text( "Submit").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
         }
             .padding()
     }
