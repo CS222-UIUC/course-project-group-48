@@ -26,7 +26,37 @@ struct Login : View {
 }
 
 func onClick() {
-    print("Hello")
+    let session = URLSession.shared
+            let url = "http://127.0.0.1:1323/v1/adduser"
+            let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            var params :[String: Any]?
+            params = ["username" : "kale-c", "password" : "gang"]
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions())
+                let task = session.dataTask(with: request as URLRequest as URLRequest, completionHandler: {(data, response, error) in
+                    if let response = response {
+                        let nsHTTPResponse = response as! HTTPURLResponse
+                        let statusCode = nsHTTPResponse.statusCode
+                        print ("status code = \(statusCode)")
+                    }
+                    if let error = error {
+                        print ("\(error)")
+                    }
+//                    if let data = data {
+//                        do{
+//                            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
+//                            print ("data = \(jsonResponse)")
+//                        }catch _ {
+//                            print ("OOps not good JSON formatted response")
+//                        }
+//                    }
+                })
+                task.resume()
+            }catch _ {
+                print ("Oops something happened buddy")
+            }
 }
 
 struct SubmitButton : View {
