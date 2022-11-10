@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"server/apihandlers/grouphandlers"
 	userhandlers "server/apihandlers/userhandlers"
 
 	imghandlers "server/apihandlers/imghandlers"
@@ -43,6 +44,8 @@ func main() {
 	e.POST(fmt.Sprintf("%s/changeimage", version1_str), imghandlers.Change_image)
 	e.POST(fmt.Sprintf("%s/removeimage", version1_str), imghandlers.Remove_image)
 	e.GET(fmt.Sprintf("%s/retrieveimage", version1_str), imghandlers.Retrieve_image)
+
+	e.POST(fmt.Sprintf("%s/creategroup", version1_str), grouphandlers.Create_group)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
