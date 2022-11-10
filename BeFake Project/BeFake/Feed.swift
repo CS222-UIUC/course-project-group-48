@@ -46,7 +46,26 @@ struct FeedView: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView()
+        TabView {
+                FeedView()
+                    .tabItem {
+                        Label("Groups", systemImage: "message")
+                    }
+
+                FeedView()
+                    .tabItem {
+                        Label("Feed", systemImage: "camera")
+                    }
+                FeedView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+                    }
+                FeedView()
+                    .tabItem {
+                        Label("Profile", systemImage: "gear")
+                    }
+        }
+
         
     }
 }

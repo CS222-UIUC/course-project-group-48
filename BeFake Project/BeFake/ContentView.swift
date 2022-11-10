@@ -4,7 +4,6 @@
 //
 //  Created by Madhav Parthasarathy on 10/6/22.
 //
-
 import SwiftUI
 
 struct WelcomeText : View {
@@ -135,8 +134,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct Previews_ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
+

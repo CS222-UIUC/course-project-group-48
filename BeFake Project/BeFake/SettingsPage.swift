@@ -74,7 +74,25 @@ struct ChangePFPPage: View {
 
 struct SettingsPage_Previews: PreviewProvider {
     static var previews: some View {
-        UpdatePassUserView()
+        TabView {
+            UpdatePassUserView()
+                .tabItem {
+                    Label("Groups", systemImage: "message")
+                }
+
+            UpdatePassUserView()
+                .tabItem {
+                    Label("Feed", systemImage: "camera")
+                }
+            UpdatePassUserView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+            UpdatePassUserView()
+                .tabItem {
+                    Label("Profile", systemImage: "gear")
+                }
+        }
     }
 }
 
@@ -213,7 +231,7 @@ struct UpdatePassUserView: View {
     @State var password: String = ""
     var body: some View {
         VStack {
-//            SettingsPage()
+            //SettingsPage()
             CurrentNamePage()
             TextField("Change Name", text: $username)
                 .padding()
@@ -235,7 +253,7 @@ struct UpdatePassUserView: View {
             Image(systemName: "photo")
                 .frame(width:50, height: 50)
                 .foregroundColor(.accentColor)
-//            UploadPhoto()
+            //UploadPhoto()
         }
         .padding()
     }
