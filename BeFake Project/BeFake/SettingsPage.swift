@@ -97,26 +97,26 @@ struct SettingsPage_Previews: PreviewProvider {
 }
 
 
-struct ChangeUsername : View {
-
-    @State var username: String = ""
-    @State var password: String = ""
-
-    var body: some View {
-
-        VStack {
-        //[…]
-            Text("Change Username")
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 220, height: 60)
-                .background(Color.green)
-                .cornerRadius(15.0)
-        }
-            .padding()
-    }
-}
+//struct ChangeUsername : View {
+//
+//    @State var username: String = ""
+//    @State var password: String = ""
+//
+//    var body: some View {
+//
+//        VStack {
+//        //[…]
+//            Text("Change Username")
+//                .font(.headline)
+//                .foregroundColor(.white)
+//                .padding()
+//                .frame(width: 220, height: 60)
+//                .background(Color.green)
+//                .cornerRadius(15.0)
+//        }
+//            .padding()
+//    }
+//}
 
 struct UploadPhoto : View {
 
@@ -139,26 +139,92 @@ struct UploadPhoto : View {
     }
 }
 
-struct ChangePassword : View {
+//struct ChangePassword : View {
+//
+//    @State var username: String = ""
+//    @State var password: String = ""
+//
+//    var body: some View {
+//
+//        VStack {
+//        //[…]
+//            Text("Change Password")
+//                .font(.headline)
+//                .foregroundColor(.white)
+//                .padding()
+//                .frame(width: 220, height: 60)
+//                .background(Color.green)
+//                .cornerRadius(15.0)
+//        }
+//            .padding()
+//    }
+//}
 
+
+func Click() {
+    let session = URLSession.shared
+            let url = "http://127.0.0.1:1323/v1/adduser"
+            let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            var params :[String: Any]?
+            params = ["username" : "kale-c", "password" : "gang"]
+            do{
+                request.httpBody = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions())
+                let task = session.dataTask(with: request as URLRequest as URLRequest, completionHandler: {(data, response, error) in
+                    if let response = response {
+                        let nsHTTPResponse = response as! HTTPURLResponse
+                        let statusCode = nsHTTPResponse.statusCode
+                        print ("status code = \(statusCode)")
+                    }
+                    if let error = error {
+                        print ("\(error)")
+                    }
+//                    if let data = data {
+//                        do{
+//                            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
+//                            print ("data = \(jsonResponse)")
+//                        }catch _ {
+//                            print ("OOps not good JSON formatted response")
+//                        }
+//                    }
+                })
+                task.resume()
+            }catch _ {
+                print ("Oops something happened buddy")
+            }
+}
+
+struct ChangeUsername : View {
+    
     @State var username: String = ""
     @State var password: String = ""
-
+    
     var body: some View {
-
+        
         VStack {
         //[…]
-            Text("Change Password")
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 220, height: 60)
-                .background(Color.green)
-                .cornerRadius(15.0)
+            Button(action: { Click() }){ Text( "Change Username").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
         }
             .padding()
     }
 }
+
+struct ChangePassword : View {
+    
+    @State var username: String = ""
+    @State var password: String = ""
+    
+    var body: some View {
+        
+        VStack {
+        //[…]
+            Button(action: { Click() }){ Text( "Change Password").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
+        }
+            .padding()
+    }
+}
+
 
 struct UpdatePassUserView: View {
     @State var username: String = ""
@@ -192,6 +258,7 @@ struct UpdatePassUserView: View {
         .padding()
     }
 }
+
 
 //
 //  ContentView.swift
@@ -266,6 +333,6 @@ struct UpdatePassUserView: View {
 //
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ContentView()
+//        SettingsPage()
 //    }
 //}

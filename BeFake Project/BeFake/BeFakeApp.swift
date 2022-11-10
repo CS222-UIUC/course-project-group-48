@@ -16,7 +16,13 @@ struct BeFakeApp: App {
             ContentView()
             SettingsPage()
             GroupsPage()
-            ProfileView()
+//            ProfileView()
         }
+    }
+}
+
+struct Previews_BeFakeApp_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
