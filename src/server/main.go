@@ -18,8 +18,16 @@ import (
 
 /*
 curl -X POST -d \
-    "{\"username\":\"siddaddy\",\"password\":\"pass\"}" \
-    http://127.0.0.1:1323/v1/adduser
+    "{\"groupname\":\"lawd\",\"username\":\"aryan\"}" \
+    http://127.0.0.1:1323/v1/joingroup
+
+curl -X POST -d \
+    "{\"groupname\":\"lawd\"}" \
+    http://127.0.0.1:1323/v1/creategroup
+
+curl -X POST -d \
+    "{\"username\":\"siddaddy\",\"new_username\":\"aryan\",\"new_password\":\"password1\"}" \
+    http://127.0.0.1:1323/v1/updateuser
 */
 
 var users map[string]string
@@ -46,6 +54,7 @@ func main() {
 	e.GET(fmt.Sprintf("%s/retrieveimage", version1_str), imghandlers.Retrieve_image)
 
 	e.POST(fmt.Sprintf("%s/creategroup", version1_str), grouphandlers.Create_group)
+	e.POST(fmt.Sprintf("%s/joingroup", version1_str), grouphandlers.Join_group)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
