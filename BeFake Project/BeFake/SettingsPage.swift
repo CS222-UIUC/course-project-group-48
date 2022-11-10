@@ -147,7 +147,7 @@ struct UpdatePassUserView: View {
     @State var password: String = ""
     var body: some View {
         VStack {
-            SettingsPage()
+//            SettingsPage()
             CurrentNamePage()
             TextField("Change Name", text: $username)
                 .padding()
@@ -169,7 +169,7 @@ struct UpdatePassUserView: View {
             Image(systemName: "photo")
                 .frame(width:50, height: 50)
                 .foregroundColor(.accentColor)
-            UploadPhoto()
+//            UploadPhoto()
         }
         .padding()
     }
@@ -248,6 +248,6 @@ struct UpdatePassUserView: View {
 //
 //struct ContentView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ContentView()
+//        SettingsPage()
 //    }
 //}
