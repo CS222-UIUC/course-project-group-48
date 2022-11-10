@@ -18,7 +18,7 @@ func Create_group(c echo.Context) error {
 	}
 
 	groupname := json_map["groupname"].(string)
-	
+
 	db.Exec("INSERT INTO usersgroup VALUES(?, NULL, NULL, NULL, NULL);", groupname)
 	if err != nil {
 	}
