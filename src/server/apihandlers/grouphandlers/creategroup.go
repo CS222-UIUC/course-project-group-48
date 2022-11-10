@@ -18,14 +18,16 @@ func Create_group(c echo.Context) error {
 	}
 
 	groupname := json_map["groupname"].(string)
-
-	db.Exec("INSERT INTO usersgroup VALUES(?, NULL, NULL, NULL, NULL);", groupname)
+	username := json_map["username"].(string)
+	
+	db.Exec("INSERT INTO usersgroup VALUES(?, ?, ?, ?, ?);", groupname, username, "", "", "")
 	if err != nil {
 	}
 
 	maingroup := ""
-	row := db.QueryRow("SELECT groupname FROM usersgroup WHERE groupname=?", groupname)
-	row.Scan(&maingroup)
+	mainuser := ""
+	row := db.QueryRow("SELECT groupname FROM usersgroup WHERE groupname=?", groupname, username)
+	row.Scan(&maingroup, &mainuser)
 
-	return c.String(http.StatusOK, groupname+"\n")
+	return c.String(http.StatusOK, mainuser + " created " + groupname+"\n")
 }
