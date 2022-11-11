@@ -24,10 +24,16 @@ func Create_group(c echo.Context) error {
 	if err != nil {
 	}
 
-	maingroup := ""
-	mainuser := ""
-	row := db.QueryRow("SELECT groupname FROM usersgroup WHERE groupname=?", groupname, username)
-	row.Scan(&maingroup, &mainuser)
 
-	return c.String(http.StatusOK, mainuser + " created " + groupname+"\n")
+
+	
+	maingroup := ""
+	mainuser1 := ""
+	mainuser2 := ""
+	mainuser3 := ""
+	mainuser4 := ""
+	row := db.QueryRow("SELECT groupname, username FROM usersgroup WHERE groupname=?", groupname)
+	row.Scan(&maingroup, &mainuser1, &mainuser2, &mainuser3, &mainuser4)
+
+	return c.String(http.StatusOK, username + " created " + groupname+"\n")
 }

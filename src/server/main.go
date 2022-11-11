@@ -18,16 +18,18 @@ import (
 
 /*
 curl -X POST -d \
-    "{\"groupname\":\"lawd\",\"username\":\"aryan\"}" \
+    "{\"groupname\":\"kelsi's group\",\"username\":\"aryan\"}" \
     http://127.0.0.1:1323/v1/joingroup
 
 curl -X POST -d \
-    "{\"groupname\":\"lawd\"}" \
+    "{\"groupname\":\"kelsi's group\",\"username\":\"kelsi\"}" \
     http://127.0.0.1:1323/v1/creategroup
 
 curl -X POST -d \
     "{\"username\":\"siddaddy\",\"new_username\":\"aryan\",\"new_password\":\"password1\"}" \
     http://127.0.0.1:1323/v1/updateuser
+
+curl -X POST -H "Accept:application/json" http://127.0.0.1:1323/v1/creategroup -d '{"groupname": "q", "username": "kelsi"}'
 */
 
 var users map[string]string
