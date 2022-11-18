@@ -18,12 +18,16 @@ import (
 
 /*
 curl -X POST -d \
-    "{\"groupname\":\"kelsi's group\",\"username\":\"aryan\"}" \
+    "{\"groupname\":\"kelsi's group\",\"username\":\"kelsi\"}" \
     http://127.0.0.1:1323/v1/joingroup
 
 curl -X POST -d \
     "{\"groupname\":\"kelsi's group\",\"username\":\"kelsi\"}" \
     http://127.0.0.1:1323/v1/creategroup
+
+curl -X POST -d \
+    "{\"groupname\":\"kelsi's group\",\"username\":\"kelsi\"}" \
+    http://127.0.0.1:1323/v1/leavegroup
 
 curl -X POST -d \
     "{\"username\":\"siddaddy\",\"new_username\":\"aryan\",\"new_password\":\"password1\"}" \
@@ -57,6 +61,7 @@ func main() {
 
 	e.POST(fmt.Sprintf("%s/creategroup", version1_str), grouphandlers.Create_group)
 	e.POST(fmt.Sprintf("%s/joingroup", version1_str), grouphandlers.Join_group)
+	e.POST(fmt.Sprintf("%s/leavegroup", version1_str), grouphandlers.Leave_group)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
