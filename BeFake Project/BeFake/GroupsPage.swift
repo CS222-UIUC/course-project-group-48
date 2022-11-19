@@ -171,23 +171,23 @@ struct GroupsPage: View {
 struct GroupsView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-                    GroupsPage()
-                        .tabItem {
-                            Label("Groups", systemImage: "message")
-                        }
+            GroupsPage()
+                .tabItem {
+                    Label("Groups", systemImage: "message")
+                }
 
-                    GroupsPage()
-                        .tabItem {
-                            Label("Feed", systemImage: "camera")
-                        }
-                    GroupsPage()
-                        .tabItem {
-                            Label("Profile", systemImage: "person")
-                        }
-                    GroupsPage()
-                        .tabItem {
-                            Label("Profile", systemImage: "gear")
-                        }
+            ProfileView()
+                .tabItem {
+                    Label("Feed", systemImage: "camera")
+                }
+            FeedView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+            UpdatePassUserView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
     }
 }

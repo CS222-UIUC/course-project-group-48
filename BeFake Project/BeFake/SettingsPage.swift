@@ -75,22 +75,22 @@ struct ChangePFPPage: View {
 struct SettingsPage_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            UpdatePassUserView()
+            GroupsPage()
                 .tabItem {
                     Label("Groups", systemImage: "message")
                 }
 
-            UpdatePassUserView()
+            ProfileView()
                 .tabItem {
                     Label("Feed", systemImage: "camera")
                 }
-            UpdatePassUserView()
+            FeedView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
             UpdatePassUserView()
                 .tabItem {
-                    Label("Profile", systemImage: "gear")
+                    Label("Settings", systemImage: "gear")
                 }
         }
     }

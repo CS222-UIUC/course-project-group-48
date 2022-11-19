@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A936A97829294FFC006BF091 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A936A97729294FFC006BF091 /* Feed.swift */; };
 		A9813735291DAEF500DFF2BC /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9813734291DAEF500DFF2BC /* ProfilePage.swift */; };
 		A9DDE58B28EFD51E00091750 /* BeFakeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DDE58A28EFD51E00091750 /* BeFakeApp.swift */; };
 		A9DDE58D28EFD51E00091750 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DDE58C28EFD51E00091750 /* ContentView.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A936A97729294FFC006BF091 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		A9813734291DAEF500DFF2BC /* ProfilePage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
 		A9DDE58728EFD51E00091750 /* BeFake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeFake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9DDE58A28EFD51E00091750 /* BeFakeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeFakeApp.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				A9DDE58A28EFD51E00091750 /* BeFakeApp.swift */,
 				B9FA075928F913C300B844A5 /* SettingsPage.swift */,
 				B95B61562902089000886B90 /* GroupsPage.swift */,
+				A936A97729294FFC006BF091 /* Feed.swift */,
 				A9DDE58C28EFD51E00091750 /* ContentView.swift */,
 				A9DDE58E28EFD52100091750 /* Assets.xcassets */,
 				A9DDE59028EFD52100091750 /* BeFake.entitlements */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95B61572902089000886B90 /* GroupsPage.swift in Sources */,
+				A936A97829294FFC006BF091 /* Feed.swift in Sources */,
 				B9FA075A28F913C300B844A5 /* SettingsPage.swift in Sources */,
 				A9813735291DAEF500DFF2BC /* ProfilePage.swift in Sources */,
 				A9DDE58D28EFD51E00091750 /* ContentView.swift in Sources */,

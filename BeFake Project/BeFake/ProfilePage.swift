@@ -58,23 +58,23 @@ struct ProfileView: View {
 struct Content2View_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-                ProfileView()
-                    .tabItem {
-                        Label("Groups", systemImage: "message")
-                    }
+            GroupsPage()
+                .tabItem {
+                    Label("Groups", systemImage: "message")
+                }
 
-                ProfileView()
-                    .tabItem {
-                        Label("Feed", systemImage: "camera")
-                    }
-                ProfileView()
-                    .tabItem {
-                        Label("Profile", systemImage: "person")
-                    }
-                ProfileView()
-                    .tabItem {
-                        Label("Profile", systemImage: "gear")
-                    }
+            ProfileView()
+                .tabItem {
+                    Label("Feed", systemImage: "camera")
+                }
+            FeedView()
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+            UpdatePassUserView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
     }
 }
