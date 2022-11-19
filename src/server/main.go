@@ -62,6 +62,7 @@ func main() {
 	e.POST(fmt.Sprintf("%s/creategroup", version1_str), grouphandlers.Create_group)
 	e.POST(fmt.Sprintf("%s/joingroup", version1_str), grouphandlers.Join_group)
 	e.POST(fmt.Sprintf("%s/leavegroup", version1_str), grouphandlers.Leave_group)
+	e.POST(fmt.Sprintf("%s/deletegroup", version1_str), grouphandlers.Delete_group)
 
 	e.Logger.Fatal(e.Start("localhost:1323"))
 }
