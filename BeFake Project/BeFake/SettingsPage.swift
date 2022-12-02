@@ -237,7 +237,7 @@ struct UpdatePassUserView: View {
                 .cornerRadius(5.0)
                 .padding(.bottom, 20)
             CurrentUserNamePage()
-            ChangeUsername()
+            //ChangeUsername()
             TextField("Change Username", text: $username)
                 .padding()
                 .cornerRadius(5.0)

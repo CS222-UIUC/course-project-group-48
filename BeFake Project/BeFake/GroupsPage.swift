@@ -8,6 +8,54 @@
 import SwiftUI
 
 
+struct AddGroup : View {
+    
+    @State var username: String = ""
+    @State var password: String = ""
+    @State var group: String = ""
+    
+    var body: some View {
+        
+        VStack {
+        //[…]
+            Button(action: { whenClick() }){ Text( "Add Group").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
+        }
+            .padding()
+    }
+}
+
+struct CreateGroup : View {
+    
+    @State var username: String = ""
+    @State var password: String = ""
+    @State var group: String = ""
+    
+    var body: some View {
+        
+        VStack {
+        //[…]
+            Button(action: { whenClick() }){ Text( "Create Group").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
+        }
+            .padding()
+    }
+}
+
+struct LeaveGroup : View {
+    
+    @State var username: String = ""
+    @State var password: String = ""
+    @State var group: String = ""
+    
+    var body: some View {
+        
+        VStack {
+        //[…]
+            Button(action: { whenClick() }){ Text( "Leave Group").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
+        }
+            .padding()
+    }
+}
+
 
 struct MyGroups: View {
     var body: some View {
@@ -147,12 +195,29 @@ struct ExitGroup : View {
 struct GroupsPage: View {
     @State var username: String = ""
     @State var password: String = ""
+    @State var group: String = ""
     var body: some View {
         VStack {
             MyGroups()
             Image(systemName: "photo")
                 .frame(width:50, height: 50)
                 .foregroundColor(.accentColor)
+
+            TextField("Username: ", text: $username)
+                .padding()
+                .cornerRadius(5.0)
+                .padding(.bottom, 20)
+            TextField("Group: ", text: $group)
+                .padding()
+                .cornerRadius(5.0)
+                .padding(.bottom, 20)
+            AddGroup()
+            LeaveGroup()
+            TextField("New Group: ", text: $group)
+                .padding()
+                .cornerRadius(5.0)
+                .padding(.bottom, 20)
+            CreateGroup()
             Group1()
             ExitGroup()
             Group2()
@@ -189,5 +254,11 @@ struct GroupsView_Previews: PreviewProvider {
                     Label("Settings", systemImage: "gear")
                 }
         }
+    }
+}
+
+struct Previews_GroupsPage_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

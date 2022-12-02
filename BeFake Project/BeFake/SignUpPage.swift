@@ -10,7 +10,7 @@
 //delete user
 //leave group - username and groupname
 //join group
-//delete group
+//delete group - don't implement for now
 //create group
 
 import SwiftUI
