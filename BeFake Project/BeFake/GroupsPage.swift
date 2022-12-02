@@ -123,26 +123,26 @@ struct ExitGroup : View {
         
         VStack {
         //[…]
-            Button(action: { whenClick() }){ Text( "Exit Group").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
+            Button(action: { whenClick() }){ Text( "Exit Group").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
         }
             .padding()
     }
 }
 
-struct ReportMember : View {
-    
-    @State var username: String = ""
-    @State var password: String = ""
-    
-    var body: some View {
-        
-        VStack {
-        //[…]
-            Button(action: { whenClick() }){ Text( "Report Member").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
-        }
-            .padding()
-    }
-}
+//struct ReportMember : View {
+//
+//    @State var username: String = ""
+//    @State var password: String = ""
+//
+//    var body: some View {
+//
+//        VStack {
+//        //[…]
+//            Button(action: { whenClick() }){ Text( "Report Member").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
+//        }
+//            .padding()
+//    }
+//}
 
 struct GroupsPage: View {
     @State var username: String = ""
@@ -160,7 +160,7 @@ struct GroupsPage: View {
             Group3()
             ExitGroup()
             
-            ReportMember()
+            //ReportMember()
         }
         .padding()
     }

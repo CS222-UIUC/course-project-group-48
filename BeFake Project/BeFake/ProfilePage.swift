@@ -51,7 +51,7 @@ struct ProfileView: View {
                         .padding(.bottom)
                 }
             }
-            Button(action: { groupClick() }){ Text( "Join Group").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
+            Button(action: { groupClick() }){ Text( "Join Group").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
         }
         .padding()
     }

@@ -27,6 +27,7 @@ import SwiftUI
 
 //import SwiftUI
 //
+
 struct SettingsPage: View {
     var body: some View {
         return Text("Settings")
@@ -204,8 +205,7 @@ struct ChangeUsername : View {
         
         VStack {
         //[…]
-            Button(action: { Click() }){ Text( "Change Username").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
-        }
+            Button(action: { Click() }){ Text( "Change Username").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
             .padding()
     }
 }
@@ -219,8 +219,7 @@ struct ChangePassword : View {
         
         VStack {
         //[…]
-            Button(action: { Click() }){ Text( "Change Password").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
-        }
+            Button(action: { Click() }){ Text( "Change Password").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
             .padding()
     }
 }

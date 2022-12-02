@@ -5,6 +5,14 @@
 //  Created by Madhav Parthasarathy on 12/1/22.
 //
 
+
+//update user needs to be one button - new username/password
+//delete user
+//leave group - username and groupname
+//join group
+//delete group
+//create group
+
 import SwiftUI
 
 func createClick() {
