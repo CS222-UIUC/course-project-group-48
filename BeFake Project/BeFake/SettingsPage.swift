@@ -80,11 +80,11 @@ struct SettingsPage_Previews: PreviewProvider {
                     Label("Groups", systemImage: "message")
                 }
 
-            ProfileView()
+            FeedView()
                 .tabItem {
                     Label("Feed", systemImage: "camera")
                 }
-            FeedView()
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }

@@ -1,5 +1,7 @@
 import SwiftUI
 
+func groupClick() {}
+
 struct ProfileView: View {
     @State var username: String = ""
     @State var password: String = ""
@@ -36,7 +38,7 @@ struct ProfileView: View {
                 .fontWeight(.heavy)
                 .foregroundColor(.black)
                 .padding(.all,20.0)
-            Text("Feed")
+            Text("Recent")
                 .fontWeight(.heavy)
                 .foregroundColor(.black)
                 .font(Font.title)
@@ -49,6 +51,7 @@ struct ProfileView: View {
                         .padding(.bottom)
                 }
             }
+            Button(action: { groupClick() }){ Text( "Join Group").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
         }
         .padding()
     }
@@ -63,11 +66,11 @@ struct Content2View_Previews: PreviewProvider {
                     Label("Groups", systemImage: "message")
                 }
 
-            ProfileView()
+            FeedView()
                 .tabItem {
                     Label("Feed", systemImage: "camera")
                 }
-            FeedView()
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }

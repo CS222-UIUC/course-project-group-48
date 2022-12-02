@@ -24,6 +24,10 @@ struct Login : View {
     }
 }
 
+func signClick() {
+    SignUpView()
+}
+
 func onClick() {
     let session = URLSession.shared
             let url = "http://127.0.0.1:1323/v1/adduser"
@@ -67,7 +71,7 @@ struct SubmitButton : View {
         
         VStack {
         //[…]
-            Button(action: { onClick() }){ Text( "Submit").padding().font(.largeTitle).fontWeight(.semibold).foregroundColor(.black)}
+            Button(action: { onClick() }){ Text( "Sign in").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
         }
             .padding()
     }
@@ -82,13 +86,7 @@ struct CreateUser : View {
         
         VStack {
         //[…]
-            Text("Create User")
-                .font(.headline)
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 220, height: 60)
-                .background(Color.green)
-                .cornerRadius(15.0)
+            Button(action: { signClick() }){ Text( "Sign Up").padding().font(.headline).fontWeight(.semibold).foregroundColor(.white).background(Color.green).cornerRadius((15.0))}
         }
             .padding()
     }

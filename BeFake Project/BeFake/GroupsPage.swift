@@ -87,7 +87,7 @@ func whenClick() {
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             var params :[String: Any]?
-            params = ["username" : "kale-c", "password" : "P2"]
+            params = ["username" : "kale-c", "password" : "gang"]
             do{
                 request.httpBody = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions())
                 let task = session.dataTask(with: request as URLRequest as URLRequest, completionHandler: {(data, response, error) in
@@ -176,11 +176,11 @@ struct GroupsView_Previews: PreviewProvider {
                     Label("Groups", systemImage: "message")
                 }
 
-            ProfileView()
+            FeedView()
                 .tabItem {
                     Label("Feed", systemImage: "camera")
                 }
-            FeedView()
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person")
                 }
