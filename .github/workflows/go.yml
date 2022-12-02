@@ -66,7 +66,7 @@
           
           
           
-name: Build and test Go
+name: Go
 on:
   push:
     branches: [ main ]
@@ -77,20 +77,18 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go 1.13
-        uses: actions/setup-go@v1
-        with:
-          go-version: 1.13
+    - name: Set up Go 1.13
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.13
 
-      - name: Check out source code
-        uses: actions/checkout@v1
+    - name: Check out source code
+      uses: actions/checkout@v1
 
-      - name: Build
-          env:
-	GOPROXY: "https://proxy.golang.org"
-       run: go build .
-
-      - name: Test
-	env:
-	GOPROXY: "https://proxy.golang.org"
-        run: go test -v 
+    - name: Build
+      env:
+        GOPROXY: "https://proxy.golang.org"
+      run: go build .
+      
+    - name: Test
+      run: go test -v .
