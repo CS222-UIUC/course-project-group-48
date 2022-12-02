@@ -66,35 +66,31 @@
           
           
           
-name: Go
-
+name: Build and test Go
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-permissions:
-  contents: read
-  pull-requests: read
-
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Go
-        uses: actions/setup-go@v2
+      - name: Set up Go 1.13
+        uses: actions/setup-go@v1
         with:
-          go-version: '1.14.0'
-      - name: Install dependencies
-        run: |
-          go version
-          go get -u golang.org/x/lint/golint
-      - name: Run build
-        run: go build .
-      - name: Run vet & lint
-        run: |
-          go vet .
-          golint .
+          go-version: 1.13
 
+      - name: Check out source code
+        uses: actions/checkout@v1
+
+      - name: Build
+          env:
+	GOPROXY: "https://proxy.golang.org"
+       run: go build .
+
+      - name: Test
+	env:
+	GOPROXY: "https://proxy.golang.org"
+        run: go test -v 
