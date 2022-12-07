@@ -19,7 +19,7 @@ click the run button. This will display the app and will allow the user to sign 
 
 **App Functionality** 
 
-Our app has a login page that allows us to create a new account and sign in. Our app supports joining groups and uploading pictures. We also have a groups page that has the groups a user is part of, a feed page with the users friends' posts, a profile page with the profile information of the user, and a settings page where a user can change information about their profile. We hope to continue adding more features to our app in the future.
+Our app has a login page that allows users to create a new account and sign in. Our app supports joining groups and uploading pictures. We also have a groups page that has the groups a user is part of, a feed page with the users' friends' posts, a profile page with the profile information of the user, and a settings page where a user can change information about their profile. We hope to continue adding more features to our app in the future.
 
 **Group Roles**
 
