@@ -5,7 +5,7 @@ course-project-group-48 created by GitHub Classroom
 **Introduction**
 
 Our project name is BeFake and it is a social media app that allows users to join groups and upload pictures of themselves completing certain focused challenges.  A 
-new challenge will be generated each day and users will be able to view their other group member's posts as well. 
+new challenge will be generated each day and users will be able to view their other group member's posts as well. While our app may seem to mimic the popular app BeReal, we created a project with more focused goals and challenges for enhanced user experience.
 
 **Architecture**
 
