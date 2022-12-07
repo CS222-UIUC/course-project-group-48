@@ -21,7 +21,7 @@ func Update_user(c echo.Context) error {
 	new_username := json_map["new_username"].(string)
 	new_password := json_map["new_password"].(string)
 
-	db.Exec("UPDATE userinfo SET username=?, password=? WHERE password=?", new_username, new_password, username)
+	db.Exec("UPDATE userinfo SET username=?, password=? WHERE username=?", new_username, new_password, username)
 
 	mainpass := ""
 	mainname := ""
@@ -31,6 +31,6 @@ func Update_user(c echo.Context) error {
 	mainname = new_username
 	mainpass = new_password
 
-	return c.String(http.StatusOK, username + "Username updated\n")
+	return c.String(http.StatusOK, username+"Username updated\n")
 
 }
